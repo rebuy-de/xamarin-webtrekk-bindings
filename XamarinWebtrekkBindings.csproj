@@ -30,7 +30,6 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="MyPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IWebtrekk.cs" />
     <Compile Include="WebtrekkProxy.cs" />

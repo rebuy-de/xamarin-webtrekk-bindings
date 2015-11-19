@@ -101,13 +101,13 @@
       <Project>{52418A8E-57A8-4F23-B24C-33F50F640989}</Project>
       <Name>Android.Libraries</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebtrekkBindings.Droid\XamarinWebtrekkBindings.Droid.csproj">
-      <Project>{63EAC6FC-B57D-4B3B-8BD9-F6BCFA4F23DB}</Project>
-      <Name>XamarinWebtrekkBindings.Droid</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WebtrekkSample\XamarinWebtrekkSample.csproj">
       <Project>{24A7AA1F-EFFF-4881-9A8F-0AC0BE9FAA8C}</Project>
       <Name>XamarinWebtrekkSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XamarinWebtrekkBindings.Droid\XamarinWebtrekkBindings.Droid.csproj">
+      <Project>{63EAC6FC-B57D-4B3B-8BD9-F6BCFA4F23DB}</Project>
+      <Name>XamarinWebtrekkBindings.Droid</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

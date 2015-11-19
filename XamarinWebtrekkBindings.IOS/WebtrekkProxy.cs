@@ -1,73 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using Android.App;
-using Android.Content;
-using Com.Webtrekk.Android.Tracking;
-using Xamarin.Forms;
+using Foundation;
+using IOS.Libraries;
 using XamarinWebtrekkBindings.Interfaces;
 
 namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
+        private WTConfiguration wtConfiguration;
+        private string serverUrl;
+        private string trackId;
+
         public WebtrekkProxy()
         {
-            Webtrekk.Context = Forms.Context;
         }
 
         public void InitWebtrekk()
         {
-            Webtrekk.ActivityStart((Activity) Forms.Context);
+            if (String.IsNullOrEmpty(serverUrl) || String.IsNullOrEmpty(trackId)) {
+                throw new Exception("You have to setUp Webtrekk");
+            }
+
+            wtConfiguration = new WTConfiguration(new NSUrl(serverUrl), trackId);
+            Webtrekk.StartWithConfiguration(wtConfiguration);
         }
 
         public void ActivityStart(object activity)
         {
-            if (activity.GetType() != typeof(Activity)) {
-                throw new Exception("wrong type");
-            }
-            Webtrekk.ActivityStart((Activity)activity);
         }
 
         public void ActivityStop(object activity)
         {
-            if (activity.GetType() != typeof(Activity)) {
-                throw new Exception("wrong type");
-            }
-            Webtrekk.ActivityStop((Activity)activity);
         }
 
         public void TrackAction(string pageContent, string action, IDictionary<string, string> parameters)
         {
-            Webtrekk.TrackAction(pageContent, action, parameters);
+            Webtrekk.TrackClick(pageContent, action, Converter.ConvertDictionaryToNSDictionary(parameters));
         }
 
         public void TrackAction(string pageContent, string action)
         {
-            Webtrekk.TrackAction(pageContent, action);
+            Webtrekk.TrackClick(pageContent, action);
         }
 
         public object TrackMedia(string s1, int num1, int num2, object mediaCategories)
         {
-            if (mediaCategories.GetType() != typeof(MediaCategories)) {
-                throw new Exception("wrong type");
-            }
-            return Webtrekk.TrackMedia(s1, num1, num2, (MediaCategories) mediaCategories);
+            throw new NotImplementedException();
         }
 
         public object TrackMedia(string s1, int num1, int num2)
         {
-            return Webtrekk.TrackMedia(s1, num1, num2);
+            throw new NotImplementedException();
         }
 
         public void TrackPage(string s1, IDictionary<string, string> dictionary)
         {
-            dictionary.Add("cg3", "androidnew");
-            Webtrekk.TrackPage(s1, dictionary);
+            Webtrekk.TrackContent(s1, Converter.ConvertDictionaryToNSDictionary(dictionary));
         }
 
         public void TrackPage(string s1)
         {
-            Webtrekk.TrackPage(s1);
+            Webtrekk.TrackContent(s1);
         }
 
         public string AppVersionParameter {
@@ -77,30 +71,19 @@ namespace XamarinWebtrekkBindings
         }
 
         public object Context {
-            get {
-                return Webtrekk.Context;
-            }
-            set {
-                if (value.GetType() != typeof(Context)) {
-                    throw new Exception("wrong type");
-                }
-                Webtrekk.Context = (Context) value;
-            }
+            get;
+            set;
         }
 
         public string EverId {
             get {
-                return Webtrekk.EverId;
+                return Webtrekk.EverId();
             }
         }
 
         public bool LoggingEnabled {
-            get {
-                return Webtrekk.LoggingEnabled;
-            }
-            set {
-                Webtrekk.LoggingEnabled = value;
-            }
+            get;
+            set;
         }
 
         public bool OptedOut {
@@ -114,43 +97,47 @@ namespace XamarinWebtrekkBindings
 
         public int SamplingRate {
             get {
-                return Webtrekk.SamplingRate;
+                if (wtConfiguration == null) {
+                    throw new Exception("You have to setUp Webtrekk");
+                }
+
+                return Convert.ToInt32(wtConfiguration.SamplingRate);
             }
             set {
-                Webtrekk.SamplingRate = value;
+                wtConfiguration.SamplingRate = Convert.ToUInt32(value);
             }
         }
 
         public long SendDelay {
             get {
-                return Webtrekk.SendDelay;
+                return Convert.ToInt64(wtConfiguration.SendDelay);
             }
             set {
-                Webtrekk.SendDelay = value;
+                wtConfiguration.SendDelay = (double) value;
             }
         }
 
         public string ServerUrl {
             get {
-                return Webtrekk.ServerUrl;
+                return wtConfiguration.ServerUrl.AbsoluteString;
             }
             set {
-                Webtrekk.ServerUrl = value;
+                serverUrl = value;
             }
         }
 
         public string TrackId {
             get {
-                return Webtrekk.TrackId;
+                return wtConfiguration.TrackId;
             }
             set {
-                Webtrekk.TrackId = value;
+                trackId = value;
             }
         }
 
         public string Version {
             get {
-                return Webtrekk.Version;
+                return Webtrekk.Version();
             }
         }
     }

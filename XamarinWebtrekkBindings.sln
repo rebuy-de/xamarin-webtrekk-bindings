@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkBindings", "XamarinWebtrekkBindings.csproj", "{330A7C85-0707-447A-93C2-756E89329F5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkBindings.Droid", "WebtrekkBindings.Droid\XamarinWebtrekkBindings.Droid.csproj", "{63EAC6FC-B57D-4B3B-8BD9-F6BCFA4F23DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkBindings.Droid", "XamarinWebtrekkBindings.Droid\XamarinWebtrekkBindings.Droid.csproj", "{63EAC6FC-B57D-4B3B-8BD9-F6BCFA4F23DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android.Libraries", "Android.Libraries\Android.Libraries.csproj", "{52418A8E-57A8-4F23-B24C-33F50F640989}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkSample.UITes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOS.Libraries", "IOS.Libraries\IOS.Libraries.csproj", "{181C6F56-2D50-40D1-A506-516EA1D4801F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkBindings.IOS", "WebtrekkBindings.IOS\XamarinWebtrekkBindings.IOS.csproj", "{C321784B-C943-4FD1-A781-97F6F4958AA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinWebtrekkBindings.IOS", "XamarinWebtrekkBindings.IOS\XamarinWebtrekkBindings.IOS.csproj", "{C321784B-C943-4FD1-A781-97F6F4958AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
