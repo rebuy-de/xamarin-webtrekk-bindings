@@ -42,15 +42,15 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\iOS\WebtrekkSample.iOS.csproj">
-      <Project>{16999397-C2E2-40D0-959A-B8EC5D19ED4E}</Project>
-      <Name>WebtrekkSample.iOS</Name>
+    <ProjectReference Include="..\Droid\XamarinWebtrekkSample.Droid.csproj">
+      <Project>{3BAF3E0C-ADCB-4901-B9D6-40F65ABAF491}</Project>
+      <Name>XamarinWebtrekkSample.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Droid\WebtrekkSample.Droid.csproj">
-      <Project>{3BAF3E0C-ADCB-4901-B9D6-40F65ABAF491}</Project>
-      <Name>WebtrekkSample.Droid</Name>
+    <ProjectReference Include="..\iOS\XamarinWebtrekkSample.iOS.csproj">
+      <Project>{16999397-C2E2-40D0-959A-B8EC5D19ED4E}</Project>
+      <Name>XamarinWebtrekkSample.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>

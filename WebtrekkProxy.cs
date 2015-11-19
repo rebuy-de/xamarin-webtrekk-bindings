@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using WebtrekkBindings.Interfaces;
+using XamarinWebtrekkBindings.Interfaces;
 
-namespace WebtrekkBindings
+namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
@@ -13,7 +13,7 @@ namespace WebtrekkBindings
             throw new NotImplementedException();
         }
 
-        public void InitActivity()
+        public void InitWebtrekk()
         {
             throw new NotImplementedException();
         }

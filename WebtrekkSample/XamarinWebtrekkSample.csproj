@@ -45,9 +45,9 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.5.1.6471\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.1.6471\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\WebtrekkBindings.Droid\WebtrekkBindings.Droid.csproj">
+    <ProjectReference Include="..\WebtrekkBindings.Droid\XamarinWebtrekkBindings.Droid.csproj">
       <Project>{63EAC6FC-B57D-4B3B-8BD9-F6BCFA4F23DB}</Project>
-      <Name>WebtrekkBindings.Droid</Name>
+      <Name>XamarinWebtrekkBindings.Droid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,8 @@
 ﻿using System;
-using Xamarin.Forms;
+using System.Collections.Generic;
 using WebtrekkSample.Pages;
+using Xamarin.Forms;
+using XamarinWebtrekkBindings;
 
 namespace WebtrekkSample
 {
@@ -8,6 +10,20 @@ namespace WebtrekkSample
     {
         public App()
         {
+            var test = new WebtrekkProxy {
+                ServerUrl = "https://webtrekkServer.net",
+                TrackId = "1784",
+                AppVersionParameter = "cs2"
+            };
+            test.InitWebtrekk();
+            test.SamplingRate = 0;
+            test.SendDelay = 300000;
+            test.LoggingEnabled = true;
+            test.TrackAction("init", "appStart");
+            test.TrackPage("Seite1", new Dictionary<string, string> {
+                {"test", "was"},
+                {"zwei", "wert"}
+            });
             // The root page of your application
             MainPage = new MainPage();
         }

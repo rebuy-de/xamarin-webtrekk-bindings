@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebtrekkBindings.Interfaces
+namespace XamarinWebtrekkBindings.Interfaces
 {
     public interface IWebtrekk
     {
-        void InitActivity();
+        void InitWebtrekk();
         void ActivityStart(object activity);
         void ActivityStop(object activity);
         void TrackAction(string pageContent, string action, IDictionary<string, string> parameters);

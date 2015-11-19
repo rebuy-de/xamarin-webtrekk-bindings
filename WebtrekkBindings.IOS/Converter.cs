@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Foundation;
 
-namespace WebtrekkBindings
+namespace XamarinWebtrekkBindings
 {
     public static class Converter
     {

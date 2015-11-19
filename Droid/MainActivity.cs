@@ -19,8 +19,6 @@ namespace WebtrekkSample.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            new WebtrekkBindings.WebtrekkProxy().TrackAction("init", "AppStart");
-
             LoadApplication(new App());
         }
     }

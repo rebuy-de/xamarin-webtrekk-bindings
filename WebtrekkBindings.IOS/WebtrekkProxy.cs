@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using IOS.Libraries;
 using Foundation;
-using WebtrekkBindings.Interfaces;
+using IOS.Libraries;
+using XamarinWebtrekkBindings.Interfaces;
 
-namespace WebtrekkBindings
+namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
@@ -16,7 +16,7 @@ namespace WebtrekkBindings
         {
         }
 
-        public void InitActivity()
+        public void InitWebtrekk()
         {
             if (String.IsNullOrEmpty(serverUrl) || String.IsNullOrEmpty(trackId)) {
                 throw new Exception("You have to setUp Webtrekk");
@@ -24,28 +24,14 @@ namespace WebtrekkBindings
 
             wtConfiguration = new WTConfiguration(new NSUrl(serverUrl), trackId);
             Webtrekk.StartWithConfiguration(wtConfiguration);
-
-
-//            if (String.IsNullOrEmpty(serverUrl) || String.IsNullOrEmpty(trackId)) {
-//                throw new Exception("You have to setUp Webtrekk");
-//            }
-//            Webtrekk.StartWithServerUrl(new NSUrl(serverUrl), trackId);
         }
 
         public void ActivityStart(object activity)
         {
-//            if (activity.GetType() != typeof(Activity)) {
-//                throw new Exception("wrong type");
-//            }
-//            Webtrekk.ActivityStart((Activity)activity);
         }
 
         public void ActivityStop(object activity)
         {
-//            if (activity.GetType() != typeof(Activity)) {
-//                throw new Exception("wrong type");
-//            }
-//            Webtrekk.ActivityStop((Activity)activity);
         }
 
         public void TrackAction(string pageContent, string action, IDictionary<string, string> parameters)
@@ -124,9 +110,16 @@ namespace WebtrekkBindings
 
         public int SamplingRate {
             get {
+                if (wtConfiguration == null) {
+                    throw new Exception("You have to setUp Webtrekk");
+                }
+
                 return Convert.ToInt32(wtConfiguration.SamplingRate);
             }
             set {
+
+
+
                 wtConfiguration.SamplingRate = Convert.ToUInt32(value);
             }
         }

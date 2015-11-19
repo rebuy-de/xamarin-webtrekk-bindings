@@ -22,18 +22,6 @@ namespace WebtrekkSample.iOS
 
             LoadApplication (new App ());
 
-            var test = new WebtrekkProxy {
-                ServerUrl = "https://rebuy01.webtrekk.net",
-                TrackId = "1234",
-                AppVersionParameter = "cs5"
-            };
-            test.InitActivity();
-            test.TrackAction("init", "appStart");
-            test.TrackPage("Seite1", new Dictionary<string, string> {
-                {"test", "was"},
-                {"zwei", "wert"}
-            });
-
             return base.FinishedLaunching (app, options);
         }
     }

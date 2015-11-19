@@ -114,17 +114,17 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <ItemGroup>
-    <ProjectReference Include="..\WebtrekkSample\WebtrekkSample.csproj">
-      <Project>{24A7AA1F-EFFF-4881-9A8F-0AC0BE9FAA8C}</Project>
-      <Name>WebtrekkSample</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebtrekkBindings.IOS\WebtrekkBindings.IOS.csproj">
-      <Project>{C321784B-C943-4FD1-A781-97F6F4958AA8}</Project>
-      <Name>WebtrekkBindings.IOS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebtrekkBindings.csproj">
+    <ProjectReference Include="..\XamarinWebtrekkBindings.csproj">
       <Project>{330A7C85-0707-447A-93C2-756E89329F5E}</Project>
-      <Name>WebtrekkBindings</Name>
+      <Name>XamarinWebtrekkBindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebtrekkBindings.IOS\XamarinWebtrekkBindings.IOS.csproj">
+      <Project>{C321784B-C943-4FD1-A781-97F6F4958AA8}</Project>
+      <Name>XamarinWebtrekkBindings.IOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebtrekkSample\XamarinWebtrekkSample.csproj">
+      <Project>{24A7AA1F-EFFF-4881-9A8F-0AC0BE9FAA8C}</Project>
+      <Name>XamarinWebtrekkSample</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

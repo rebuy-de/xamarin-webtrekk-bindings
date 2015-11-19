@@ -1,12 +1,12 @@
 ﻿using System;
-using WebtrekkBindings.Interfaces;
 using System.Collections.Generic;
-using Xamarin.Forms;
-using Com.Webtrekk.Android.Tracking;
 using Android.App;
 using Android.Content;
+using Com.Webtrekk.Android.Tracking;
+using Xamarin.Forms;
+using XamarinWebtrekkBindings.Interfaces;
 
-namespace WebtrekkBindings
+namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
@@ -15,7 +15,7 @@ namespace WebtrekkBindings
             Webtrekk.Context = Forms.Context;
         }
 
-        public void InitActivity()
+        public void InitWebtrekk()
         {
             Webtrekk.ActivityStart((Activity) Forms.Context);
         }

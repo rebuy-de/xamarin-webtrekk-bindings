@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{C321784B-C943-4FD1-A781-97F6F4958AA8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>WebtrekkBindings</RootNamespace>
+    <RootNamespace>XamarinWebtrekkBindings</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>WebtrekkBindings</AssemblyName>
+    <AssemblyName>XamarinWebtrekkBindings</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,9 +65,9 @@
       <Project>{181C6F56-2D50-40D1-A506-516EA1D4801F}</Project>
       <Name>IOS.Libraries</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WebtrekkBindings.csproj">
+    <ProjectReference Include="..\XamarinWebtrekkBindings.csproj">
       <Project>{330A7C85-0707-447A-93C2-756E89329F5E}</Project>
-      <Name>WebtrekkBindings</Name>
+      <Name>XamarinWebtrekkBindings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

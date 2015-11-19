@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using WebtrekkBindings;
 
 namespace WebtrekkSample.Pages
 {
@@ -17,7 +16,6 @@ namespace WebtrekkSample.Pages
 
         private void goToNextPage(Object sender, EventArgs e)
         {
-//            new WebtrekkProxy().TrackPage("SecondPageOpened");
             Navigation.PushAsync(new SecondPage());
         }
     }
