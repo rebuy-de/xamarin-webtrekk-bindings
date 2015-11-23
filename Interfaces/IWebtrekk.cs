@@ -20,10 +20,11 @@ namespace XamarinWebtrekkBindings.Interfaces
         string EverId{ get; }
         Boolean LoggingEnabled{ get; set; }
         Boolean OptedOut{ get; set; }
-        int SamplingRate{ get; set; }
-        long SendDelay{ get; set; }
-        string ServerUrl{ get; set; }
-        string TrackId{ get; set; }
+        int SamplingRate{ get; }
+        long SendDelay{ get; }
+        string ServerUrl{ get; }
+        string TrackId{ get; }
         string Version{ get; }
+        WebtrekkConfig Config { get; set; }
     }
 }

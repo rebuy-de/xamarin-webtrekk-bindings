@@ -30,9 +30,15 @@
      <file src="XamarinWebtrekkBindings.Droid/bin/Release/XamarinWebtrekkBindings.dll"
          target="lib/MonoAndroid10/XamarinWebtrekkBindings.dll" />
 
+     <file src="Android.Libraries/bin/Release/Android.Libraries.dll"
+     target="lib/MonoAndroid10/Android.Libraries.dll" />
+
      <!-- Xamarin.IOS -->    
      <file src="XamarinWebtrekkBindings.IOS/bin/Release/XamarinWebtrekkBindings.dll"
          target="lib/Xamarin.iOS10/XamarinWebtrekkBindings.dll" />
+
+     <file src="IOS.Libraries/bin/Release/IOS.Libraries.dll"
+         target="lib/Xamarin.iOS10/IOS.Libraries.dll" />
 
   </files>
 </package>

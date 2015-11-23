@@ -4,7 +4,10 @@ using Android.App;
 using Android.Content;
 using Com.Webtrekk.Android.Tracking;
 using Xamarin.Forms;
+using XamarinWebtrekkBindings;
 using XamarinWebtrekkBindings.Interfaces;
+using System.Runtime.CompilerServices;
+using System.ComponentModel;
 
 namespace XamarinWebtrekkBindings
 {
@@ -17,6 +20,20 @@ namespace XamarinWebtrekkBindings
 
         public void InitWebtrekk()
         {
+            if (String.IsNullOrEmpty(Config?.ServerUrl) || String.IsNullOrEmpty(Config?.TrackId)) {
+                throw new Exception("You have to set at least serverUrl and trackId in the Config");
+            }
+
+            Webtrekk.ServerUrl = Config.ServerUrl;
+            Webtrekk.TrackId = Config.TrackId;
+            Webtrekk.SamplingRate = Config.SamplingRate;
+            Webtrekk.SendDelay = Config.SendDelay;
+            Webtrekk.LoggingEnabled = Config.LoggingEnabled;
+
+            if (!String.IsNullOrEmpty(Config.AppVersionParameter)) {
+                Webtrekk.SetAppVersionParameter(Config.AppVersionParameter);
+            }
+
             Webtrekk.ActivityStart((Activity) Forms.Context);
         }
 
@@ -115,17 +132,11 @@ namespace XamarinWebtrekkBindings
             get {
                 return Webtrekk.SamplingRate;
             }
-            set {
-                Webtrekk.SamplingRate = value;
-            }
         }
 
         public long SendDelay {
             get {
                 return Webtrekk.SendDelay;
-            }
-            set {
-                Webtrekk.SendDelay = value;
             }
         }
 
@@ -133,17 +144,11 @@ namespace XamarinWebtrekkBindings
             get {
                 return Webtrekk.ServerUrl;
             }
-            set {
-                Webtrekk.ServerUrl = value;
-            }
         }
 
         public string TrackId {
             get {
                 return Webtrekk.TrackId;
-            }
-            set {
-                Webtrekk.TrackId = value;
             }
         }
 
@@ -152,6 +157,8 @@ namespace XamarinWebtrekkBindings
                 return Webtrekk.Version;
             }
         }
+
+        public WebtrekkConfig Config { get; set; }
     }
 }
 
