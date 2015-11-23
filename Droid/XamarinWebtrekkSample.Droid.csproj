@@ -97,10 +97,6 @@
   <Import Project="..\packages\Xamarin.Forms.1.5.1.6471\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.5.1.6471\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Android.Libraries\Android.Libraries.csproj">
-      <Project>{52418A8E-57A8-4F23-B24C-33F50F640989}</Project>
-      <Name>Android.Libraries</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WebtrekkSample\XamarinWebtrekkSample.csproj">
       <Project>{24A7AA1F-EFFF-4881-9A8F-0AC0BE9FAA8C}</Project>
       <Name>XamarinWebtrekkSample</Name>

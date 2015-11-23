@@ -2,28 +2,31 @@
 using System.Collections.Generic;
 using Foundation;
 using IOS.Libraries;
+using XamarinWebtrekkBindings;
 using XamarinWebtrekkBindings.Interfaces;
+using Xamarin.Forms;
 
 namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
         private WTConfiguration wtConfiguration;
-        private string serverUrl;
-        private string trackId;
-
-        public WebtrekkProxy()
-        {
-        }
 
         public void InitWebtrekk()
         {
-            if (String.IsNullOrEmpty(serverUrl) || String.IsNullOrEmpty(trackId)) {
-                throw new Exception("You have to setUp Webtrekk");
+            if (String.IsNullOrEmpty(Config?.ServerUrl) || String.IsNullOrEmpty(Config?.TrackId)) {
+                throw new Exception("You have to set at least serverUrl and trackId in the Config");
             }
 
-            wtConfiguration = new WTConfiguration(new NSUrl(serverUrl), trackId);
+            wtConfiguration = new WTConfiguration(new NSUrl(Config.ServerUrl), Config.TrackId);
             Webtrekk.StartWithConfiguration(wtConfiguration);
+
+            wtConfiguration.SamplingRate = Convert.ToUInt32(Config.SamplingRate);
+            wtConfiguration.SendDelay = Config.SendDelay;
+
+            if (!String.IsNullOrEmpty(Config.AppVersionParameter)) {
+                Webtrekk.SetAppVersionParameter(Config.AppVersionParameter);
+            }
         }
 
         public void ActivityStart(object activity)
@@ -97,41 +100,25 @@ namespace XamarinWebtrekkBindings
 
         public int SamplingRate {
             get {
-                if (wtConfiguration == null) {
-                    throw new Exception("You have to setUp Webtrekk");
-                }
-
-                return Convert.ToInt32(wtConfiguration.SamplingRate);
-            }
-            set {
-                wtConfiguration.SamplingRate = Convert.ToUInt32(value);
+                return Convert.ToInt32(wtConfiguration?.SamplingRate);
             }
         }
 
         public long SendDelay {
             get {
-                return Convert.ToInt64(wtConfiguration.SendDelay);
-            }
-            set {
-                wtConfiguration.SendDelay = (double) value;
+                return Convert.ToInt64(wtConfiguration?.SendDelay);
             }
         }
 
         public string ServerUrl {
             get {
-                return wtConfiguration.ServerUrl.AbsoluteString;
-            }
-            set {
-                serverUrl = value;
+                return wtConfiguration?.ServerUrl?.AbsoluteString;
             }
         }
 
         public string TrackId {
             get {
-                return wtConfiguration.TrackId;
-            }
-            set {
-                trackId = value;
+                return wtConfiguration?.TrackId;
             }
         }
 
@@ -140,6 +127,8 @@ namespace XamarinWebtrekkBindings
                 return Webtrekk.Version();
             }
         }
+
+        public WebtrekkConfig Config { set; get; }
     }
 }
 

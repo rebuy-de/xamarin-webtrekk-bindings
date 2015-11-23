@@ -6,8 +6,6 @@ namespace XamarinWebtrekkBindings
 {
     public class WebtrekkProxy : IWebtrekk
     {
-        private IWebtrekk webtrekk;
-
         public WebtrekkProxy()
         {
             throw new NotImplementedException();
@@ -135,6 +133,15 @@ namespace XamarinWebtrekkBindings
 
         public string Version {
             get {
+                throw new NotImplementedException();
+            }
+        }
+
+        public WebtrekkConfig Config {
+            get {
+                throw new NotImplementedException();
+            }
+            set {
                 throw new NotImplementedException();
             }
         }

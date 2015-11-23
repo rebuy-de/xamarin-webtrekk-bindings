@@ -12,14 +12,15 @@ namespace WebtrekkSample.Pages
             InitializeComponent();
 
             NavigationPage.SetHasBackButton(this, true);
+
+            Webtrekk.Instance.TrackPage("Seite1", new Dictionary<string, string> {
+                {"st", "view"},
+                {"co", "99.34"}
+            });
         }
 
         private void goToNextPage(Object sender, EventArgs e)
         {
-            Webtrekk.Instance.GetWebtrekkProxy().TrackPage("Seite1", new Dictionary<string, string> {
-                {"st", "view"},
-                {"co", "99.34"}
-            });
             Navigation.PushAsync(new SecondPage());
         }
     }

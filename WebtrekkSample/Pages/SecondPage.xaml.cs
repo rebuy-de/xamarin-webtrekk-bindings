@@ -9,6 +9,10 @@ namespace WebtrekkSample.Pages
         public SecondPage()
         {
             InitializeComponent();
+            Webtrekk.Instance.TrackPage("Seite2", new Dictionary<string, string> {
+                {"st", "view"},
+                {"co", "102.34"}
+            });
         }
     }
 }

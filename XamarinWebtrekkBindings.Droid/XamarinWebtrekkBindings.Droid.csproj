@@ -77,6 +77,9 @@
     <Compile Include="..\Interfaces\IWebtrekk.cs">
       <Link>Interfaces\IWebtrekk.cs</Link>
     </Compile>
+    <Compile Include="..\WebtrekkConfig.cs">
+      <Link>WebtrekkConfig.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
