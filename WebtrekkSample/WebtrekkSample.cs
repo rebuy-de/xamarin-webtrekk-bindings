@@ -19,7 +19,7 @@ namespace WebtrekkSample
                 TrackId = "111111111111111"
             };
 
-            webtrekk.InitWebtrekk();
+            webtrekk.Init();
             webtrekk.LoggingEnabled = true;
             webtrekk.TrackAction("init", "appStart");
 
