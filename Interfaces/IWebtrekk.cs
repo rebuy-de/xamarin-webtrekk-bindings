@@ -5,7 +5,7 @@ namespace XamarinWebtrekkBindings.Interfaces
 {
     public interface IWebtrekk
     {
-        void InitWebtrekk();
+        void Init();
         void ActivityStart(object activity);
         void ActivityStop(object activity);
         void TrackAction(string pageContent, string action, IDictionary<string, string> parameters);

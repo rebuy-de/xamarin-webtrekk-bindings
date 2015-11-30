@@ -9,6 +9,7 @@
     <RootNamespace>WebtrekkSample.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>WebtrekkSample.iOS</AssemblyName>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +122,10 @@
     <ProjectReference Include="..\XamarinWebtrekkBindings.IOS\XamarinWebtrekkBindings.IOS.csproj">
       <Project>{C321784B-C943-4FD1-A781-97F6F4958AA8}</Project>
       <Name>XamarinWebtrekkBindings.IOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOS.Libraries\IOS.Libraries.csproj">
+      <Project>{181C6F56-2D50-40D1-A506-516EA1D4801F}</Project>
+      <Name>IOS.Libraries</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

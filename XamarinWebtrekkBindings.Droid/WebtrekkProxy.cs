@@ -18,7 +18,7 @@ namespace XamarinWebtrekkBindings
             Webtrekk.Context = Forms.Context;
         }
 
-        public void InitWebtrekk()
+        public void Init()
         {
             if (String.IsNullOrEmpty(Config?.ServerUrl) || String.IsNullOrEmpty(Config?.TrackId)) {
                 throw new Exception("You have to set at least serverUrl and trackId in the Config");
@@ -161,4 +161,3 @@ namespace XamarinWebtrekkBindings
         public WebtrekkConfig Config { get; set; }
     }
 }
-

@@ -1,9 +1,6 @@
 ﻿using System;
-
-using UIKit;
 using Foundation;
 using ObjCRuntime;
-using CoreGraphics;
 
 namespace IOS.Libraries
 {
@@ -265,5 +262,104 @@ namespace IOS.Libraries
         [Export ("clearCrossDeviceData")]
         void ClearCrossDeviceData ();
     }
-}
 
+    // @interface WTMediaCategories : NSObject
+    [BaseType (typeof(NSObject))]
+    interface WTMediaCategories
+    {
+        // @property (readonly, nonatomic) NSString * category1;
+        [Export ("category1")]
+        string Category1 { get; }
+
+        // @property (readonly, nonatomic) NSString * category2;
+        [Export ("category2")]
+        string Category2 { get; }
+
+        // @property (readonly, nonatomic) NSString * category3;
+        [Export ("category3")]
+        string Category3 { get; }
+
+        // @property (readonly, nonatomic) NSString * category4;
+        [Export ("category4")]
+        string Category4 { get; }
+
+        // @property (readonly, nonatomic) NSString * category5;
+        [Export ("category5")]
+        string Category5 { get; }
+
+        // @property (readonly, nonatomic) NSString * category6;
+        [Export ("category6")]
+        string Category6 { get; }
+
+        // @property (readonly, nonatomic) NSString * category7;
+        [Export ("category7")]
+        string Category7 { get; }
+
+        // @property (readonly, nonatomic) NSString * category8;
+        [Export ("category8")]
+        string Category8 { get; }
+
+        // @property (readonly, nonatomic) NSString * category9;
+        [Export ("category9")]
+        string Category9 { get; }
+
+        // @property (readonly, nonatomic) NSString * category10;
+        [Export ("category10")]
+        string Category10 { get; }
+
+        // +(id)newWithCategories:(NSArray *)categories;
+        [Static]
+        [Export ("newWithCategories:")]
+        NSObject NewWithCategories (NSObject[] categories);
+
+        // +(id)newWithCategory1:(NSString *)category1;
+        [Static]
+        [Export ("newWithCategory1:")]
+        NSObject NewWithCategory1 (string category1);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2;
+        [Static]
+        [Export ("newWithCategory1:category2:")]
+        NSObject NewWithCategory1 (string category1, string category2);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5 category6:(NSString *)category6;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:category6:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5, string category6);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5 category6:(NSString *)category6 category7:(NSString *)category7;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:category6:category7:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5, string category6, string category7);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5 category6:(NSString *)category6 category7:(NSString *)category7 category8:(NSString *)category8;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:category6:category7:category8:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5, string category6, string category7, string category8);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5 category6:(NSString *)category6 category7:(NSString *)category7 category8:(NSString *)category8 category9:(NSString *)category9;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:category6:category7:category8:category9:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5, string category6, string category7, string category8, string category9);
+
+        // +(id)newWithCategory1:(NSString *)category1 category2:(NSString *)category2 category3:(NSString *)category3 category4:(NSString *)category4 category5:(NSString *)category5 category6:(NSString *)category6 category7:(NSString *)category7 category8:(NSString *)category8 category9:(NSString *)category9 category10:(NSString *)category10;
+        [Static]
+        [Export ("newWithCategory1:category2:category3:category4:category5:category6:category7:category8:category9:category10:")]
+        NSObject NewWithCategory1 (string category1, string category2, string category3, string category4, string category5, string category6, string category7, string category8, string category9, string category10);
+    }
+}

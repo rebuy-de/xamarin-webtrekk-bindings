@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Foundation;
 using IOS.Libraries;
+using Xamarin.Forms;
 using XamarinWebtrekkBindings;
 using XamarinWebtrekkBindings.Interfaces;
-using Xamarin.Forms;
 
 namespace XamarinWebtrekkBindings
 {
@@ -12,7 +12,7 @@ namespace XamarinWebtrekkBindings
     {
         private WTConfiguration wtConfiguration;
 
-        public void InitWebtrekk()
+        public void Init()
         {
             if (String.IsNullOrEmpty(Config?.ServerUrl) || String.IsNullOrEmpty(Config?.TrackId)) {
                 throw new Exception("You have to set at least serverUrl and trackId in the Config");

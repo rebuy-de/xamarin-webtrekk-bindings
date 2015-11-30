@@ -11,7 +11,7 @@ namespace XamarinWebtrekkBindings
             throw new NotImplementedException();
         }
 
-        public void InitWebtrekk()
+        public void Init()
         {
             throw new NotImplementedException();
         }
