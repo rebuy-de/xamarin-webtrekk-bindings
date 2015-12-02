@@ -39,12 +39,12 @@ namespace XamarinWebtrekkBindings
 
         public void TrackAction(string pageContent, string action, IDictionary<string, string> parameters)
         {
-            Webtrekk.TrackClick(pageContent, action, Converter.ConvertDictionaryToNSDictionary(parameters));
+            Webtrekk.TrackClick(action, pageContent, Converter.ConvertDictionaryToNSDictionary(parameters));
         }
 
         public void TrackAction(string pageContent, string action)
         {
-            Webtrekk.TrackClick(pageContent, action);
+            Webtrekk.TrackClick(action, pageContent);
         }
 
         public object TrackMedia(string s1, int num1, int num2, object mediaCategories)
